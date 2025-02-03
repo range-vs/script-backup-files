@@ -1,0 +1,9 @@
+[Unit]
+Description=Bac timer
+
+[Timer]
+OnCalendar=Sat 03:00 # YOUR TIME AND DAY
+Unit=bac.service
+
+[Install]
+WantedBy=timers.target
