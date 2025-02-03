@@ -22,7 +22,7 @@ FILE_SIZE=$(du -BG "$DEST_DIR/$ZIP_NAME" | cut -f1)
 BACKUPS_LIST=$(ls -lh --time-style=long-iso "$DEST_DIR"/bec_*.zip | awk '{print $8, $6, $5}' | column -t)
 BACKUPS_SMB_LIST=$(ls -lh --time-style=long-iso "$DEST_SMB_DIR"/bec_*.zip | awk '{print $8, $6, $5}' | column -t)
 
-MESSAGE="backup ok, date ${TIMESTAMP}, size file ${FILE_SIZE}%0Alist backups:%0A${BACKUPS_LIST}\%0Alist backups:%0A${BACKUPS_SMB_LIST}"
+MESSAGE="backup ok, date ${TIMESTAMP}, size file ${FILE_SIZE}%0Alist backups:%0A${BACKUPS_LIST}%0Alist backups:%0A${BACKUPS_SMB_LIST}"
 
 curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
     -d chat_id="${CHAT_ID}" \
