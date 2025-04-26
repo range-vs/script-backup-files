@@ -7,6 +7,10 @@ TOKEN="YOUR_TG_BOT_TOKEN"
 CHAT_ID="YOUR_TG_CHAT_ID"
 KEY="[BACKUP_SERVICE]"
 
+# mount smd resources
+SMB_MOUNT_LOG=$(mount -a)
+echo "$SMB_MOUNT_LOG"
+
 # test connect to smb
 SMB_MOUNTS=$(mount | grep smb)
 
